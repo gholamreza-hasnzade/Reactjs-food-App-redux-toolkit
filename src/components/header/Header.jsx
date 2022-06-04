@@ -1,8 +1,19 @@
 import React from 'react'
+import { Container } from 'reactstrap'
  
+import logo from "../../assets/images/res-logo.png"
+
 const Header = () => {
   return (
-    <div>Header</div>
+    <header className='header'>
+      <Container>
+        <div className="nav__wrapper">
+          <div className='logo'>
+            <img src={logo} alt="food logo" />
+          </div>
+        </div>
+      </Container>
+    </header>
   )
 }
 
