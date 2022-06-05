@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Container } from "reactstrap";
 
-import logo from "../../assets/images/res-logo.png";
+import { IMAGES } from "../../constants/content";
 
 import "./header.css";
 
@@ -34,7 +34,7 @@ const Header = () => {
       <Container>
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
           <div className="logo">
-            <img src={logo} alt="food logo" />
+            <img src={IMAGES.LOGO} alt="food logo" />
             <h5>Tasty Treat</h5>
           </div>
           {/* ===== menu ===== */}
