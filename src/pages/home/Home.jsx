@@ -1,11 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 
 import Helmet from "../../components/helmet/Helmet";
 import { IMAGES } from "../../constants/content";
 
-
-import "./home.css"
+import "./home.css";
 const Home = () => {
   return (
     <Helmet title={"Home"}>
@@ -15,16 +15,28 @@ const Home = () => {
             <Col lg="6" md="6">
               <div className="hero__content">
                 <h5 className="mb-3">Esay way to make an order</h5>
-                <h1 className="mb-4">
-                  <span>HUNGRY?</span>Just wait food at<span> your door</span>
+                <h1 className="mb-4 hero__title">
+                  <span>HUNGRY?</span>Just wait <br /> food at
+                  <span> your door</span>
                 </h1>
 
                 <p>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Natus eum velit tempore obcaecati inventore praesentium
-                  delectus fugiat quod itaque? Quae, ratione cupiditate quod
-                  vero possimus labore cum voluptates. Quasi, harum.
+                  Natus eum velit tempore obcaecati inventore praesentium.
                 </p>
+
+                <div className="hero__btns d-flex align-items-center gap-5 mt-4">
+                  <button
+                    type="button"
+                    className="order__btn d-flex align-items-center justify-content-between"
+                  >
+                    Order now <i className="ri-arrow-right-s-line"></i>
+                  </button>
+
+                  <button className="all__foods-btn ">
+                    <Link to={"/foods"}>See all foods</Link>
+                  </button>
+                </div>
               </div>
             </Col>
 
