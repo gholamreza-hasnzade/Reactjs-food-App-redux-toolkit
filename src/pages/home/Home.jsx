@@ -8,6 +8,24 @@ import { IMAGES } from "../../constants/content";
 
 import "./home.css";
 
+const featureData = [
+  {
+    title: "Quick Delivery",
+    imgUrl: IMAGES.FEATUREIMG_01,
+    desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, accusantium.",
+  },
+  {
+    title: "QSuper Dine In",
+    imgUrl: IMAGES.FEATUREIMG_02,
+    desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, accusantium.",
+  },
+  {
+    title: "Easy Pick Up",
+    imgUrl: IMAGES.FEATUREIMG_03,
+    desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, accusantium.",
+  },
+];
+
 const Home = () => {
   return (
     <Helmet title={"Home"}>
@@ -79,9 +97,9 @@ const Home = () => {
               <h2 className="feature__title">Just sit back at home</h2>
               <h2 className="feature__title">
                 we will <span>take care</span>
-              </h2> 
+              </h2>
               <p className="mb-1 mt-4 feature__text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Pariatur, quod.
               </p>
               <p className="feature__text">
@@ -89,6 +107,16 @@ const Home = () => {
                 Pariatur, quod.
               </p>
             </Col>
+
+            {featureData.map((item, index) => (
+              <Col lg="4" md="4" key={index} className="mt-5">
+                <div className="feature__item text-center px-5 py-3">
+                  <img src={item.imgUrl} alt={item.title}  className="w-25 mb-3"/>
+                  <h5 className="fs-bold mb-3">{item.title}</h5>
+                  <p>{item.desc}</p>
+                </div>
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
