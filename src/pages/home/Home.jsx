@@ -149,7 +149,12 @@ const Home = () => {
                 </button>
               </div>
             </Col>
-          </Row>
+            {products.map((item) => (
+              <Col lg="3" md="4" key={item.id} className="mt-5">
+                <ProductCard item={item}/>
+              </Col>
+            ))}
+          </Row> 
         </Container>
       </section>
     </Helmet>
