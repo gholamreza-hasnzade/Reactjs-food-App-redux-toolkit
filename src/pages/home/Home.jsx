@@ -8,7 +8,6 @@ import { IMAGES } from "../../constants/content";
 
 import "./home.css";
 
-
 const Home = () => {
   return (
     <Helmet title={"Home"}>
@@ -51,7 +50,7 @@ const Home = () => {
 
                   <p className="d-flex align-content-center gap-2">
                     <span className="shipping__icon">
-                    <i className="ri-shield-check-line"></i>
+                      <i className="ri-shield-check-line"></i>
                     </span>
                     100% secure checkout
                   </p>
@@ -68,9 +67,30 @@ const Home = () => {
         </Container>
       </section>
 
-
       <section className="pt-0">
         <Category />
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center">
+              <h5 className="feature__subtitle mb-4">What we serve</h5>
+              <h2 className="feature__title">Just sit back at home</h2>
+              <h2 className="feature__title">
+                we will <span>take care</span>
+              </h2> 
+              <p className="mb-1 mt-4 feature__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur, quod.
+              </p>
+              <p className="feature__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur, quod.
+              </p>
+            </Col>
+          </Row>
+        </Container>
       </section>
     </Helmet>
   );
