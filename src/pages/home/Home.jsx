@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 
 import Helmet from "../../components/helmet/Helmet";
+import { Category } from "../../components/UI";
 import { IMAGES } from "../../constants/content";
 
 import "./home.css";
+
+
 const Home = () => {
   return (
     <Helmet title={"Home"}>
@@ -63,6 +66,11 @@ const Home = () => {
             </Col>
           </Row>
         </Container>
+      </section>
+
+
+      <section className="pt-0">
+        <Category />
       </section>
     </Helmet>
   );
