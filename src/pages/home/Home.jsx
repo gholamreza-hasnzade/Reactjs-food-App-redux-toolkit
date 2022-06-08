@@ -3,9 +3,30 @@ import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 
 import Helmet from "../../components/helmet/Helmet";
+import { Category, ProductCard } from "../../components/UI";
 import { IMAGES } from "../../constants/content";
+import products from "../../assets/fake-data/products";
 
 import "./home.css";
+
+const featureData = [
+  {
+    title: "Quick Delivery",
+    imgUrl: IMAGES.FEATUREIMG_01,
+    desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, accusantium.",
+  },
+  {
+    title: "QSuper Dine In",
+    imgUrl: IMAGES.FEATUREIMG_02,
+    desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, accusantium.",
+  },
+  {
+    title: "Easy Pick Up",
+    imgUrl: IMAGES.FEATUREIMG_03,
+    desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, accusantium.",
+  },
+];
+
 const Home = () => {
   return (
     <Helmet title={"Home"}>
@@ -38,17 +59,17 @@ const Home = () => {
                   </button>
                 </div>
 
-                <div className="hero__service d-flex align-content-center  gap-4 mt-5">
-                  <p className="d-flex align-content-center gap-2">
+                <div className="hero__service d-flex align-items-center  gap-4 mt-5">
+                  <p className="d-flex align-items-center gap-2">
                     <span className="shipping__icon">
                       <i className="ri-car-line"></i>
                     </span>
                     No shipping charge
                   </p>
 
-                  <p className="d-flex align-content-center gap-2">
+                  <p className="d-flex align-items-center gap-2">
                     <span className="shipping__icon">
-                    <i className="ri-shield-check-line"></i>
+                      <i className="ri-shield-check-line"></i>
                     </span>
                     100% secure checkout
                   </p>
@@ -62,6 +83,78 @@ const Home = () => {
               </div>
             </Col>
           </Row>
+        </Container>
+      </section>
+
+      <section className="pt-0">
+        <Category />
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center">
+              <h5 className="feature__subtitle mb-4">What we serve</h5>
+              <h2 className="feature__title">Just sit back at home</h2>
+              <h2 className="feature__title">
+                we will <span>take care</span>
+              </h2>
+              <p className="mb-1 mt-4 feature__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur, quod.
+              </p>
+              <p className="feature__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur, quod.
+              </p>
+            </Col>
+
+            {featureData.map((item, index) => (
+              <Col lg="4" md="4" key={index} className="mt-5">
+                <div className="feature__item text-center px-5 py-3">
+                  <img
+                    src={item.imgUrl}
+                    alt={item.title}
+                    className="w-25 mb-3"
+                  />
+                  <h5 className="fs-bold mb-3">{item.title}</h5>
+                  <p>{item.desc}</p>
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center">
+              <h2>Popular Foods</h2>
+            </Col>
+            <Col lg="12">
+              <div className="food__category d-flex justify-content-center gap-4">
+                <button className="all__btn foodBtnActive">All</button>
+                <button className="d-flex align-items-center gap-2">
+                  <img src={IMAGES.FOODCATEGORY_01} alt="" />
+                  Burger
+                </button>
+                <button className="d-flex align-items-center gap-2">
+                  <img src={IMAGES.FOODCATEGORY_02} alt="" />
+                  Pizza
+                </button>
+                <button className="d-flex align-items-center gap-2">
+                  <img src={IMAGES.FOODCATEGORY_03} alt="" />
+                  Bread
+                </button>
+              </div>
+            </Col>
+            {products.map((item) => (
+              <Col lg="3" md="4" key={item.id} className="mt-5">
+                <ProductCard item={item}/>
+              </Col>
+            ))}
+          </Row> 
         </Container>
       </section>
     </Helmet>
