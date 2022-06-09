@@ -16,6 +16,9 @@ import foodCategory01 from "../../assets/images/hamburger.png";
 import foodCategory02 from "../../assets/images/pizza.png";
 import foodCategory03 from "../../assets/images/bread.png";
 
+import whyImg from "../../assets/images/location.png"
+
+
 export const IMAGES = {
   LOGO: Logo,
   HEROIMG: HeroImg,
@@ -32,4 +35,6 @@ export const IMAGES = {
   FOODCATEGORY_01: foodCategory01,
   FOODCATEGORY_02: foodCategory02,
   FOODCATEGORY_03: foodCategory03,
+
+  WHYIMG: whyImg
 };

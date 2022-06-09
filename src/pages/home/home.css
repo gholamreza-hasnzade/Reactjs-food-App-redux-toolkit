@@ -65,15 +65,13 @@
   color: #df2020;
 }
 
-
-.feature__text{
+.feature__text {
   color: #777;
 }
 
 .feature__item p {
   color: #777;
 }
-
 
 .food__category {
   background: #df2020;
@@ -83,7 +81,7 @@
   border-radius: 8px;
 }
 
-.food__category button{
+.food__category button {
   border: none;
   outline: none;
   padding: 7px 20px;
@@ -100,4 +98,27 @@
   background: #fff !important;
   border-radius: 5px !important;
   color: #df2020 !important;
+}
+
+.tasty__treat--title span {
+  color: #df2020;
+}
+
+.why__tasty--desc {
+  color: #777;
+  line-height: 28px;
+}
+
+.choose__us-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.choose__us-title i {
+  font-weight: 500;
+  color: #df2020;
+}
+
+.choose__us-desc{
+  color: #777;
 }
