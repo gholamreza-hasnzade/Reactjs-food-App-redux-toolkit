@@ -210,6 +210,18 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="6" md="6">
+              <img src={IMAGES.WHYIMG} alt="WHYIMG" className="w-100" />
+            </Col>
+            <Col lg="6" md="6"></Col>
+          </Row>
+        </Container>
+      </section>
     </Helmet>
   );
 };
