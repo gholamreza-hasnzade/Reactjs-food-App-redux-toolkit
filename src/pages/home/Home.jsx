@@ -31,6 +31,14 @@ const Home = () => {
   const [category, setCategory] = useState("ALL");
   const [allProduts, setAllProducts] = useState(products);
 
+  const [hotPizza, setHotPizza] = useState([]);
+
+  useEffect(() => {
+    const filterdPizza = products.filter((item) => item.category === "Pizza");
+    const slicePizza = filterdPizza.slice(0, 4);
+    setHotPizza(slicePizza);
+  }, []);
+
   useEffect(() => {
     if (category === "ALL") {
       setAllProducts(products);
@@ -223,7 +231,9 @@ const Home = () => {
             </Col>
             <Col lg="6" md="6">
               <div className="why__tasty--treat">
-                <h2 className="tasty__treat--title mb-4">Why <span>Tasty Treat?</span></h2>
+                <h2 className="tasty__treat--title mb-4">
+                  Why <span>Tasty Treat?</span>
+                </h2>
 
                 <p className="why__tasty--desc">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -245,7 +255,7 @@ const Home = () => {
                   </ListGroupItem>
 
                   <ListGroupItem className="border-0 ps-0">
-                    <p  className="choose__us-title d-flex align-items-center gap-2">
+                    <p className="choose__us-title d-flex align-items-center gap-2">
                       <i className="ri-checkbox-circle-line"></i>
                       Quality support
                     </p>
@@ -268,6 +278,22 @@ const Home = () => {
                 </ListGroup>
               </div>
             </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="pt-0">
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center mb-5">
+              <h2>Hot Pizza</h2>
+            </Col>
+
+            {hotPizza.map((item) => (
+              <Col lg="3" md="4" key={item.id} className="mt-5">
+                <ProductCard item={item} />
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
