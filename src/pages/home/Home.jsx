@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Col, Container, Row } from "reactstrap";
+import { Col, Container, ListGroup, ListGroupItem, Row } from "reactstrap";
 
 import Helmet from "../../components/helmet/Helmet";
 import { Category, ProductCard } from "../../components/UI";
@@ -211,14 +211,63 @@ const Home = () => {
         </Container>
       </section>
 
-
       <section>
         <Container>
           <Row>
             <Col lg="6" md="6">
-              <img src={IMAGES.WHYIMG} alt="WHYIMG" className="w-100" />
+              <img
+                src={IMAGES.WHYIMG}
+                alt="why-tasty-treat"
+                className="w-100"
+              />
             </Col>
-            <Col lg="6" md="6"></Col>
+            <Col lg="6" md="6">
+              <div className="why__tasty--treat">
+                <h2 className="tasty__treat--title mb-4">Why <span>Tasty Treat?</span></h2>
+
+                <p className="why__tasty--desc">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quibusdam delectus numquam iusto. Cupiditate iste labore, ad,
+                  eaque nemo a architecto tempore aperiam libero non tempora
+                  necessitatibus voluptates, commodi eum corrupti?
+                </p>
+
+                <ListGroup className="mt-5">
+                  <ListGroupItem className="border-0 ps-0">
+                    <p className="choose__us-title d-flex align-items-center gap-2">
+                      <i className="ri-checkbox-circle-line"></i>
+                      Fresh and tasty foods
+                    </p>
+                    <p className="choose__us-desc">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Quae, nihil!
+                    </p>
+                  </ListGroupItem>
+
+                  <ListGroupItem className="border-0 ps-0">
+                    <p  className="choose__us-title d-flex align-items-center gap-2">
+                      <i className="ri-checkbox-circle-line"></i>
+                      Quality support
+                    </p>
+                    <p className="choose__us-desc">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Magnam
+                    </p>
+                  </ListGroupItem>
+
+                  <ListGroupItem className="border-0 ps-0">
+                    <p className="choose__us-title d-flex align-items-center gap-2">
+                      <i className="ri-checkbox-circle-line"></i>
+                      Order from any locations
+                    </p>
+                    <p className="choose__us-desc">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Magnam
+                    </p>
+                  </ListGroupItem>
+                </ListGroup>
+              </div>
+            </Col>
           </Row>
         </Container>
       </section>
