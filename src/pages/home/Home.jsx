@@ -298,15 +298,31 @@ const Home = () => {
         </Container>
       </section>
 
-
       <section>
         <Container>
           <Row>
             <Col lg="6" md="6">
-              <img src={IMAGES.NETWORK_IMG} alt="testimonial-img" />
+              <div className="testimonial">
+                <h5 className="testimonial__subtitle  mb-4">Testimonial</h5>
+                <h2 className="testimonial__title  mb-4">
+                  What our <span>customers</span> are saying
+                </h2>
+
+                <p className="testimonial__desc">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Officia magnam, non in quibusdam cum ullam officiis suscipit
+                  vel fugiat beatae adipisci ipsa sunt consequatur nemo. Dicta,
+                  facilis eum. Suscipit, distinctio?
+                </p>
+              </div>
             </Col>
+
             <Col lg="6" md="6">
-              
+              <img
+                src={IMAGES.NETWORK_IMG}
+                alt="testimonial-img"
+                className="w-100"
+              />
             </Col>
           </Row>
         </Container>
