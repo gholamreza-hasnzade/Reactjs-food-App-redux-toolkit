@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Container, ListGroup, ListGroupItem, Row } from "reactstrap";
 
 import Helmet from "../../components/helmet/Helmet";
-import { Category, ProductCard } from "../../components/UI";
+import { Category, ProductCard ,TestimonialSlider} from "../../components/UI";
 import { IMAGES } from "../../constants/content";
 import products from "../../assets/fake-data/products";
 
@@ -314,6 +314,8 @@ const Home = () => {
                   vel fugiat beatae adipisci ipsa sunt consequatur nemo. Dicta,
                   facilis eum. Suscipit, distinctio?
                 </p>
+
+                <TestimonialSlider />
               </div>
             </Col>
 
@@ -327,6 +329,8 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+
+      
     </Helmet>
   );
 };
