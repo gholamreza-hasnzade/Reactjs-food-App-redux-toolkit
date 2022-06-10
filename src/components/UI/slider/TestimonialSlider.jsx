@@ -1,6 +1,7 @@
 import React from "react";
 
 import Slider from "react-slick";
+import { IMAGES } from "../../../constants/content";
 
 import "./testimonialSlider.css";
 
@@ -24,15 +25,34 @@ const TestimonialSlider = () => {
           sapiente quae explicabo cum. Quae commodi tenetur saepe, odit eveniet
           quidem corrupti harum."
         </p>
-        <div>
-          <img src="" alt="" />
+        <div className="slider__content d-flex align-items-center gap-3">
+          <img src={IMAGES.AVA__01} alt="avatar" className=" rounded" />
+          <h6>Jhon Don</h6>
         </div>
       </div>
       <div>
-        <h3>2</h3>
+        <p className="review__text">
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+          ipsum tempora voluptatum odit quidem voluptate numquam, aliquam,
+          sapiente quae explicabo cum. Quae commodi tenetur saepe, odit eveniet
+          quidem corrupti harum."
+        </p>
+        <div className="slider__content d-flex align-items-center gap-3">
+          <img src={IMAGES.AVA__02} alt="avatar" className=" rounded" />
+          <h6>Mitchell Marsh</h6>
+        </div>
       </div>
       <div>
-        <h3>3</h3>
+        <p className="review__text">
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+          ipsum tempora voluptatum odit quidem voluptate numquam, aliquam,
+          sapiente quae explicabo cum. Quae commodi tenetur saepe, odit eveniet
+          quidem corrupti harum."
+        </p>
+        <div className="slider__content d-flex align-items-center gap-3">
+          <img src={IMAGES.AVA__03} alt="avatar" className="rounded"/>
+          <h6>Steven Crock</h6>
+        </div>
       </div>
     </Slider>
   );
