@@ -17,7 +17,7 @@ import foodCategory02 from "../../assets/images/pizza.png";
 import foodCategory03 from "../../assets/images/bread.png";
 
 import whyImg from "../../assets/images/location.png"
-
+import netWorkImg from "../../assets/images/network.png";
 
 export const IMAGES = {
   LOGO: Logo,
@@ -36,5 +36,7 @@ export const IMAGES = {
   FOODCATEGORY_02: foodCategory02,
   FOODCATEGORY_03: foodCategory03,
 
-  WHYIMG: whyImg
+  WHYIMG: whyImg,
+
+  NETWORK_IMG :netWorkImg
 };
