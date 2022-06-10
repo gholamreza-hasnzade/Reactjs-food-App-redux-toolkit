@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Container, ListGroup, ListGroupItem, Row } from "reactstrap";
 
 import Helmet from "../../components/helmet/Helmet";
-import { Category, ProductCard } from "../../components/UI";
+import { Category, ProductCard ,TestimonialSlider} from "../../components/UI";
 import { IMAGES } from "../../constants/content";
 import products from "../../assets/fake-data/products";
 
@@ -297,6 +297,40 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="6" md="6">
+              <div className="testimonial">
+                <h5 className="testimonial__subtitle  mb-4">Testimonial</h5>
+                <h2 className="testimonial__title  mb-4">
+                  What our <span>customers</span> are saying
+                </h2>
+
+                <p className="testimonial__desc">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Officia magnam, non in quibusdam cum ullam officiis suscipit
+                  vel fugiat beatae adipisci ipsa sunt consequatur nemo. Dicta,
+                  facilis eum. Suscipit, distinctio?
+                </p>
+
+                <TestimonialSlider />
+              </div>
+            </Col>
+
+            <Col lg="6" md="6">
+              <img
+                src={IMAGES.NETWORK_IMG}
+                alt="testimonial-img"
+                className="w-100"
+              />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      
     </Helmet>
   );
 };
