@@ -16,8 +16,13 @@ import foodCategory01 from "../../assets/images/hamburger.png";
 import foodCategory02 from "../../assets/images/pizza.png";
 import foodCategory03 from "../../assets/images/bread.png";
 
-import whyImg from "../../assets/images/location.png"
+import whyImg from "../../assets/images/location.png";
 import netWorkImg from "../../assets/images/network.png";
+
+import ava__01 from "../../assets/images/ava-1.jpg";
+import ava__02 from "../../assets/images/ava-2.jpg";
+import ava__03 from "../../assets/images/ava-3.jpg";
+import ava__04 from "../../assets/images/ava-4.jpg";
 
 export const IMAGES = {
   LOGO: Logo,
@@ -38,5 +43,9 @@ export const IMAGES = {
 
   WHYIMG: whyImg,
 
-  NETWORK_IMG :netWorkImg
+  NETWORK_IMG: netWorkImg,
+  AVA__01: ava__01,
+  AVA__02: ava__02,
+  AVA__03: ava__03,
+  AVA__04: ava__04,
 };

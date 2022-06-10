@@ -18,7 +18,15 @@ const TestimonialSlider = () => {
   return (
     <Slider {...settings}>
       <div>
-        <h3>1</h3>
+        <p className="review__text">
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+          ipsum tempora voluptatum odit quidem voluptate numquam, aliquam,
+          sapiente quae explicabo cum. Quae commodi tenetur saepe, odit eveniet
+          quidem corrupti harum."
+        </p>
+        <div>
+          <img src="" alt="" />
+        </div>
       </div>
       <div>
         <h3>2</h3>
