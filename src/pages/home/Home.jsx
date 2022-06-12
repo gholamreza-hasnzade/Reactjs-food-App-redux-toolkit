@@ -211,7 +211,7 @@ const Home = () => {
             </Col>
             {allProduts &&
               allProduts?.map((item) => (
-                <Col lg="3" md="4" key={item.id} className="mt-5">
+                <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
                   <ProductCard item={item} />
                 </Col>
               ))}
