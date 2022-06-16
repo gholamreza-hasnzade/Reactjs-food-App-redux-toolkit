@@ -56,7 +56,7 @@ const Footer = () => {
               <input type="email" placeholder="Enter your email" />
               <span>
                 <i className="ri-send-plane-line"></i>
-              </span>
+              </span> 
             </div>
           </Col>
         </Row>
@@ -68,7 +68,7 @@ const Footer = () => {
             </p>
           </Col>
           <Col lg="6" md="6">
-            <div className="socail__links d-flex aligin-items-center gap-4 justify-content-end">
+            <div className="social__links d-flex align-items-center gap-4 justify-content-end">
               <p className="mb-0">Follow: </p>
               <span>
                 <Link to="https://www.linkedin.com/in/gholamreza-hasanzadeh-tabrizi-7004a4190">
