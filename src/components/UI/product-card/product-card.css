@@ -37,7 +37,7 @@
   font-size: 0.9rem;
 }
 
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 992px)  {
 
   .product__content h5 a{
     font-size: 0.8rem;
