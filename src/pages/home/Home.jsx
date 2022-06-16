@@ -219,7 +219,7 @@ const Home = () => {
         </Container>
       </section>
 
-      <section>
+      <section className="why_choose-us">
         <Container>
           <Row>
             <Col lg="6" md="6">
@@ -235,14 +235,14 @@ const Home = () => {
                   Why <span>Tasty Treat?</span>
                 </h2>
 
-                <p className="why__tasty--desc">
+                <p className="tasty__treat--desc">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Quibusdam delectus numquam iusto. Cupiditate iste labore, ad,
                   eaque nemo a architecto tempore aperiam libero non tempora
                   necessitatibus voluptates, commodi eum corrupti?
                 </p>
 
-                <ListGroup className="mt-5">
+                <ListGroup className="mt-4">
                   <ListGroupItem className="border-0 ps-0">
                     <p className="choose__us-title d-flex align-items-center gap-2">
                       <i className="ri-checkbox-circle-line"></i>
