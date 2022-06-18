@@ -23,3 +23,22 @@
   height: 35px;
   object-fit: cover;
 }
+
+.cart__product-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.cart__product-price {
+  font-size: 0.8rem;
+}
+
+.cart__product-price span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #df2020;
+}
+
+.increase__decrease-btn{
+    background: #fde4e4;
+}

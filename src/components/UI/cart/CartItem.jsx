@@ -18,12 +18,12 @@ const CartItem = () => {
             <p className="d-flex align-items-center gap-5 cart__product-price">
               2x <span>$24.00</span>
             </p>
-            <div className="d-flex align-items-center gap-3">
+            <div className="d-flex align-items-center justify-content-between increase__decrease-btn">
               <span>
                 <i className="ri-add-line"></i>
               </span>
               <span>2</span>
-              <span>
+              <span className="delete__btn">
                 <i className="ri-subtract-line"></i>
               </span>
             </div>
