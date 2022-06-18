@@ -11,6 +11,7 @@ import featureImg02 from "../../assets/images/service-02.png";
 import featureImg03 from "../../assets/images/service-03.png";
 
 import productImg from "../../assets/images/product_2.1.jpg";
+import productImg_01_1 from "../../assets/images/product_01.1.jpg";
 
 import foodCategory01 from "../../assets/images/hamburger.png";
 import foodCategory02 from "../../assets/images/pizza.png";
@@ -36,7 +37,7 @@ export const IMAGES = {
   FEATUREIMG_03: featureImg03,
 
   PRODUCTIMG_01: productImg,
-
+  ProductImg_01_1: productImg_01_1,
   FOODCATEGORY_01: foodCategory01,
   FOODCATEGORY_02: foodCategory02,
   FOODCATEGORY_03: foodCategory03,
