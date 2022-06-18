@@ -7,7 +7,7 @@ import "./cart.css";
 
 const CartItem = () => {
   return (
-    <ListGroupItem className="border-0">
+    <ListGroupItem className="border-0 cart__item">
       <div className="cart__item-info d-flex gap-2">
         <img src={IMAGES.ProductImg_01_1} alt="product-img" />
 
@@ -19,16 +19,16 @@ const CartItem = () => {
               2x <span>$24.00</span>
             </p>
             <div className="d-flex align-items-center justify-content-between increase__decrease-btn">
-              <span>
+              <span className="increase__btn">
                 <i className="ri-add-line"></i>
               </span>
-              <span>2</span>
-              <span className="delete__btn">
+              <span className="quantity">2</span>
+              <span className="decrease__btn">
                 <i className="ri-subtract-line"></i>
               </span>
             </div>
           </div>
-          <span>
+          <span className="delete__btn">
             <i className="ri-close-line"></i>
           </span>
         </div>

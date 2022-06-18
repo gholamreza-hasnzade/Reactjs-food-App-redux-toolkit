@@ -16,6 +16,8 @@ const Carts = () => {
 
         <div className="cart__item-list">
             <CartItem />
+            <CartItem />
+            <CartItem />
         </div>
 
 
