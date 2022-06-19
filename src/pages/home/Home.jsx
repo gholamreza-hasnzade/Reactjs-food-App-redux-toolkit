@@ -29,7 +29,7 @@ const featureData = [
 
 const Home = () => {
   const [category, setCategory] = useState("ALL");
-  const [allProduts, setAllProducts] = useState(products);
+  const [allProducts, setAllProducts] = useState(products);
 
   const [hotPizza, setHotPizza] = useState([]);
 
@@ -209,8 +209,8 @@ const Home = () => {
                 </button>
               </div>
             </Col>
-            {allProduts &&
-              allProduts?.map((item) => (
+            {allProducts &&
+              allProducts?.map((item) => (
                 <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
                   <ProductCard item={item} />
                 </Col>

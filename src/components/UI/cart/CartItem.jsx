@@ -5,24 +5,27 @@ import { IMAGES } from "../../../constants/content";
 
 import "./cart.css";
 
-const CartItem = () => {
+const CartItem = ({item}) => {
+  const {id , title ,price , image01 , quantity , totalPrice} = item
+
+  console.log(image01);
   return (
     <ListGroupItem className="border-0 cart__item">
       <div className="cart__item-info d-flex gap-2">
-        <img src={IMAGES.ProductImg_01_1} alt="product-img" />
+        <img src={image01} alt={title} />
 
         <div className="cart__product-info d-flex align-items-center w-100
          justify-content-between gap-4">
           <div>
-            <h6 className="cart__product-title">Burger</h6>
+            <h6 className="cart__product-title">{title}</h6>
             <p className="d-flex align-items-center gap-5 cart__product-price">
-              2x <span>$24.00</span>
+              {quantity}x <span>$ {totalPrice}</span>
             </p>
             <div className="d-flex align-items-center justify-content-between increase__decrease-btn">
               <span className="increase__btn">
                 <i className="ri-add-line"></i>
               </span>
-              <span className="quantity">2</span>
+              <span className="quantity">{quantity}</span>
               <span className="decrease__btn">
                 <i className="ri-subtract-line"></i>
               </span>
