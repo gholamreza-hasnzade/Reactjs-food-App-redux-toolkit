@@ -41,39 +41,35 @@
   border-bottom: 1px solid #fde4e4;
 }
 .cart__bottom {
-    position: absolute;
-    bottom: 0;
-    padding: 5px 20px;
-    width: 100%;
-    height: 80px;
-    background: #df2020;
+  position: absolute;
+  bottom: 0;
+  padding: 5px 20px;
+  width: 100%;
+  height: 80px;
+  background: #df2020;
 }
 .cart__bottom h6 {
-    font-size: 1rem;
-    color: #fff;
+  font-size: 1rem;
+  color: #fff;
 }
 
-.cart__bottom h6 span{
-    font-size: 1.3rem;
-    font-weight: 600;
+.cart__bottom h6 span {
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .cart__bottom button {
-    border: none;
-    padding: 4px 20px;
-    border-radius: 5px;
-    background: #fff;
-    color: #212245;
+  border: none;
+  padding: 4px 20px;
+  border-radius: 5px;
+  background: #fff;
+  color: #212245;
 }
-
 
 .cart__bottom button a {
-    color: #212245;
-    font-weight: 600;
+  color: #212245;
+  font-weight: 600;
 }
-
-
-
 
 .cart__item-info img {
   width: 35px;
@@ -110,4 +106,5 @@
 .delete__btn {
   font-size: 1.1rem;
   font-weight: 600;
+  cursor: pointer;
 }
