@@ -20,6 +20,8 @@ const CartItem = ({ item }) => {
     }))
   };
 
+  
+
   return (
     <ListGroupItem className="border-0 cart__item">
       <div className="cart__item-info d-flex gap-2">
