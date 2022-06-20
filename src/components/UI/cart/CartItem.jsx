@@ -12,15 +12,18 @@ const CartItem = ({ item }) => {
   const dispatch = useDispatch();
 
   const incrementItem = () => {
-    dispatch(cartActions.addItem({
-      id,
-      title,
-      price,
-      image01
-    }))
+    dispatch(
+      cartActions.addItem({
+        id,
+        title,
+        price,
+        image01,
+      })
+    );
   };
-
-  
+  const decrementItem = () => {
+    dispatch(cartActions.removeItem(id));
+  };
 
   return (
     <ListGroupItem className="border-0 cart__item">
@@ -41,12 +44,12 @@ const CartItem = ({ item }) => {
                 <i className="ri-add-line"></i>
               </span>
               <span className="quantity">{quantity}</span>
-              <span className="decrease__btn">
+              <span className="decrease__btn" onClick={decrementItem}>
                 <i className="ri-subtract-line"></i>
               </span>
             </div>
           </div>
-          <span className="delete__btn">
+          <span className="delete__btn" >
             <i className="ri-close-line"></i>
           </span>
         </div>
