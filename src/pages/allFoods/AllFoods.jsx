@@ -17,16 +17,19 @@ const AllFoods = () => {
         <Container>
           <Row>
             <Col lg="6" md="6" sm="6">
-              <div className="search__widget">
+              <div
+                className="search__widget d-flex align-items-center 
+              justify-content-between w-50"
+              >
                 <input type="text" placeholder="I'm looking for..." />
                 <span>
                   <i className="ri-search-line"></i>
                 </span>
               </div>
             </Col>
-            <Col lg="6" md="6" sm="6">
-              <div className="sorting__widget">
-                <select>
+            <Col lg="6" md="6" sm="6" className="mb-5">
+              <div className="sorting__widget text-end">
+                <select className="w-50">
                   <option>Default</option>
                   <option value="ascending">Alphabetically, A-Z</option>
                   <option value="descending">Alphabetically, Z-A</option>
@@ -37,7 +40,7 @@ const AllFoods = () => {
             </Col>
 
             {products.map((item) => (
-              <Col lg="3" md="4" sm="6" xs="6">
+              <Col lg="3" md="4" sm="6" xs="6" className="mb-4">
                 <ProductCard key={item.id} item={item} />
               </Col>
             ))}
