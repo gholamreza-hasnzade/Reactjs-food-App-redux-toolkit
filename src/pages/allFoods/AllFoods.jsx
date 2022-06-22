@@ -2,7 +2,11 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 
 import Helmet from "../../components/helmet/Helmet";
-import { CommonSection } from "../../components/UI";
+import { CommonSection, ProductCard } from "../../components/UI";
+
+import products from "../../assets/fake-data/products";
+
+import "./all-foods.css";
 
 const AllFoods = () => {
   return (
@@ -31,6 +35,12 @@ const AllFoods = () => {
                 </select>
               </div>
             </Col>
+
+            {products.map((item) => (
+              <Col lg="3" md="4" sm="6" xs="6">
+                <ProductCard key={item.id} item={item} />
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
