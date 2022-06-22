@@ -4,13 +4,24 @@ import { Container, Row, Col } from "reactstrap";
 import Helmet from "../../components/helmet/Helmet";
 import { CommonSection, ProductCard } from "../../components/UI";
 
+import ReactPaginate from "react-paginate";
+
 import products from "../../assets/fake-data/products";
 
 import "./all-foods.css";
 
 const AllFoods = () => {
   const [searchItem, setSearchItem] = useState("");
-  const [productData, setProductData] = useState(products);
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const productPerPage = 3;
+  const visitedPage = pageNumber * productPerPage;
+  const displayPage = products.slice(visitedPage, visitedPage + productPerPage);
+  const pageCount = Math.ceil(products.length / productPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   return (
     <Helmet title="All Foods">
@@ -47,23 +58,29 @@ const AllFoods = () => {
               </div>
             </Col>
 
-            {productData
+            {displayPage
               .filter((item) => {
                 if (searchItem.value === "") return item;
 
-                if (
-                  item.title
-                    .toLowerCase()
-                    .includes(searchItem.toLowerCase())
-                )
+                if (item.title.toLowerCase().includes(searchItem.toLowerCase()))
                   return item;
               })
 
               .map((item) => (
                 <Col lg="3" md="4" sm="6" xs="6" className="mb-4" key={item.id}>
-                  <ProductCard  item={item} />
+                  <ProductCard item={item} />
                 </Col>
               ))}
+            <div>
+              <ReactPaginate
+                pageCount={pageCount}
+                onPageChange={changePage}
+                previousLabel="Prev"
+                nextAriaLabel="Next"
+                containerClassName="paginationButtons"
+                forcePage={pageNumber}
+              />
+            </div>
           </Row>
         </Container>
       </section>
