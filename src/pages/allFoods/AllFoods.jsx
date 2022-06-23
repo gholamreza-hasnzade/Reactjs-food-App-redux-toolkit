@@ -14,10 +14,17 @@ const AllFoods = () => {
   const [searchItem, setSearchItem] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
 
-  const productPerPage = 3;
+  const searchProduct = products.filter((item) => {
+    if (searchItem.value === "") return item;
+
+    if (item.title.toLowerCase().includes(searchItem.toLowerCase()))
+      return item;
+  });
+
+  const productPerPage = 8;
   const visitedPage = pageNumber * productPerPage;
-  const displayPage = products.slice(visitedPage, visitedPage + productPerPage);
-  const pageCount = Math.ceil(products.length / productPerPage);
+  const displayPage = searchProduct.slice(visitedPage, visitedPage + productPerPage);
+  const pageCount = Math.ceil(searchProduct.length / productPerPage);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
@@ -26,7 +33,6 @@ const AllFoods = () => {
   return (
     <Helmet title="All Foods">
       <CommonSection title="All Foods" />
-
       <section>
         <Container>
           <Row>
@@ -58,19 +64,11 @@ const AllFoods = () => {
               </div>
             </Col>
 
-            {displayPage
-              .filter((item) => {
-                if (searchItem.value === "") return item;
-
-                if (item.title.toLowerCase().includes(searchItem.toLowerCase()))
-                  return item;
-              })
-
-              .map((item) => (
-                <Col lg="3" md="4" sm="6" xs="6" className="mb-4" key={item.id}>
-                  <ProductCard item={item} />
-                </Col>
-              ))}
+            {displayPage.map((item) => (
+              <Col lg="3" md="4" sm="6" xs="6" className="mb-4" key={item.id}>
+                <ProductCard item={item} />
+              </Col>
+            ))}
             <div>
               <ReactPaginate
                 pageCount={pageCount}
