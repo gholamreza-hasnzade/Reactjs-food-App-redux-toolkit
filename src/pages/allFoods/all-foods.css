@@ -30,7 +30,7 @@
 
 .paginationButtons a {
   padding: 5px 20px;
-  background: #df2020;
+  background: #212245;
   color: #fff !important;
   border-radius: 5px;
   display: flex;
@@ -41,9 +41,5 @@
 }
 
 .paginationButtons a:hover {
-    background: #212245;
-}
-.paginationButtons .selected ,.paginationButtons .selected a{
-    background: #212245 !important;
-    border-radius: 5px;
+    background: #df2020;
 }
