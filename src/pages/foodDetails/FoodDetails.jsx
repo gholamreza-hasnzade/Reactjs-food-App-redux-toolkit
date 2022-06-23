@@ -38,11 +38,17 @@ const FoodDetails = () => {
             </Col>
             <Col lg="6" md="6">
               <div className="single__product-content">
-                <h2 className="product__title">Pizza with mushroom</h2>
+                <h2 className="product__title mb-3">Pizza with mushroom</h2>
                 <p className="product__price">Price: <span>$ 345</span> </p>
-                <p>Category : <span>Burger</span> </p>
+                <p className="category mb-5">Category : <span>Burger</span> </p>
 
                 <button className="addToCart__btn">Add to Cart</button>
+              </div>
+            </Col>
+
+            <Col lg="12">
+              <div className="tabs">
+                <h6>Descriptions</h6>
               </div>
             </Col>
           </Row>
