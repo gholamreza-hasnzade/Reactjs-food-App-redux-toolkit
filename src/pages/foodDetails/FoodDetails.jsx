@@ -21,13 +21,13 @@ const FoodDetails = () => {
             <Col lg="2" md="2">
               <div className="product__images">
                 <div className="img__item">
-                  <img src={IMAGES.ProductImg_01_1} alt="" className="w-50"/>
+                  <img src={IMAGES.ProductImg_01_1} alt="" className="w-50" />
                 </div>
                 <div className="img__item">
-                  <img src={IMAGES.ProductImg_01_1} alt="" className="w-50"/>
+                  <img src={IMAGES.ProductImg_01_1} alt="" className="w-50" />
                 </div>
                 <div className="img__item">
-                  <img src={IMAGES.ProductImg_01_1} alt="" className="w-50"/>
+                  <img src={IMAGES.ProductImg_01_1} alt="" className="w-50" />
                 </div>
               </div>
             </Col>
@@ -39,16 +39,48 @@ const FoodDetails = () => {
             <Col lg="6" md="6">
               <div className="single__product-content">
                 <h2 className="product__title mb-3">Pizza with mushroom</h2>
-                <p className="product__price">Price: <span>$ 345</span> </p>
-                <p className="category mb-5">Category : <span>Burger</span> </p>
+                <p className="product__price">
+                  Price: <span>$ 345</span>{" "}
+                </p>
+                <p className="category mb-5">
+                  Category : <span>Burger</span>{" "}
+                </p>
 
                 <button className="addToCart__btn">Add to Cart</button>
               </div>
             </Col>
 
             <Col lg="12">
-              <div className="tabs">
-                <h6>Descriptions</h6>
+              <div className="tabs d-flex align-items-center gap-5 py-3 ">
+                <h6 className="tabs__active">Descriptions</h6>
+                <h6>Review</h6>
+              </div>
+
+              <div className="tab__content">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Nesciunt velit unde in quidem sunt quis tenetur aperiam
+                  laborum magnam ex omnis at sint doloribus consequatur
+                  laudantium ducimus cupiditate, debitis nemo.
+                </p>
+              </div>
+
+              <div className="tab_form">
+                <form className="form">
+                  <div className="form__group">
+                    <input type="text" placeholder="Please Enter Name" />
+                  </div>
+
+                  <div className="form__group">
+                    <input type="text" placeholder="Please Enter Name" />
+                  </div>
+
+                  <div className="form__group">
+                    <textarea rows={5}></textarea>
+                  </div>
+
+                  <button type="submit" className="addToCart__btn">Submit</button>
+                </form>
               </div>
             </Col>
           </Row>
