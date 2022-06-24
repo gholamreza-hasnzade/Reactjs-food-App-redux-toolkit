@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import products from "../../assets/fake-data/products";
@@ -6,11 +6,16 @@ import Helmet from "../../components/helmet/Helmet";
 import { CommonSection } from "../../components/UI";
 
 import { Container, Row, Col } from "reactstrap";
-import { IMAGES } from "../../constants/content";
 
 import "./food-details.css";
 
 const FoodDetails = () => {
+  const [tab, setTab] = useState("desc");
+  const { id } = useParams();
+  const product = products.find((product) => product.id === id);
+
+  const [perViewImg, setPerViewImg] = useState(product.image01);
+
   return (
     <Helmet title={`Product-details`}>
       <CommonSection title={"product 01"} />
@@ -20,20 +25,20 @@ const FoodDetails = () => {
           <Row>
             <Col lg="2" md="2">
               <div className="product__images">
-                <div className="img__item">
-                  <img src={IMAGES.ProductImg_01_1} alt="" className="w-50" />
+                <div className="img__item" onClick={() => setPerViewImg(product.image01)}>
+                  <img src={product.image01} alt="" className="w-50" />
                 </div>
-                <div className="img__item">
-                  <img src={IMAGES.ProductImg_01_1} alt="" className="w-50" />
+                <div className="img__item" onClick={() => setPerViewImg(product.image02)}>
+                  <img src={product.image02} alt="" className="w-50" />
                 </div>
-                <div className="img__item">
-                  <img src={IMAGES.ProductImg_01_1} alt="" className="w-50" />
+                <div className="img__item" onClick={() => setPerViewImg(product.image03)}>
+                  <img src={product.image03} alt="" className="w-50" />
                 </div>
               </div>
             </Col>
             <Col lg="4" md="4">
               <div className="product__main-img">
-                <img src={IMAGES.ProductImg_01_1} alt="" className="w-100" />
+                <img src={perViewImg} alt="" className="w-100" />
               </div>
             </Col>
             <Col lg="6" md="6">
@@ -65,7 +70,29 @@ const FoodDetails = () => {
                 </p>
               </div>
 
-              <div className="tab_form">
+              <div className="tab_form mb-3">
+                <div className="review">
+                  <p className="user__name mb-0">Gholamreza Tabrizi</p>
+                  <p className="user__email">
+                    gholamreza.hassanzade.1994@gmail.com
+                  </p>
+                  <p className="feedback__text">great product</p>
+                </div>
+                <div className="review">
+                  <p className="user__name mb-0">Gholamreza Tabrizi</p>
+                  <p className="user__email">
+                    gholamreza.hassanzade.1994@gmail.com
+                  </p>
+                  <p className="feedback__text">great product</p>
+                </div>
+
+                <div className="review">
+                  <p className="user__name mb-0">Gholamreza Tabrizi</p>
+                  <p className="user__email">
+                    gholamreza.hassanzade.1994@gmail.com
+                  </p>
+                  <p className="feedback__text">great product</p>
+                </div>
                 <form className="form">
                   <div className="form__group">
                     <input type="text" placeholder="Please Enter Name" />
@@ -79,7 +106,9 @@ const FoodDetails = () => {
                     <textarea rows={5}></textarea>
                   </div>
 
-                  <button type="submit" className="addToCart__btn">Submit</button>
+                  <button type="submit" className="addToCart__btn">
+                    Submit
+                  </button>
                 </form>
               </div>
             </Col>
