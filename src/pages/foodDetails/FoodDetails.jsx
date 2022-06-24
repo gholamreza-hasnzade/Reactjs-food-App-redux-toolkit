@@ -12,10 +12,14 @@ import "./food-details.css";
 
 const FoodDetails = () => {
   const dispatch = useDispatch();
-  const [tab, setTab] = useState("desc");
   const { id } = useParams();
   const product = products.find((product) => product.id === id);
   const [perViewImg, setPerViewImg] = useState(product.image01);
+  const [tab, setTab] = useState("desc");
+
+  const [enteredName, setEnteredName] = useState("");
+  const [enteredEmail, setEnteredEmail] = useState("");
+  const [enteredMsg, setEnteredMsg] = useState("");
 
   const { title, image01, image02, image03, price, category, desc } = product;
   const relatedProduct = products.filter((item) => item.category === category);
@@ -28,13 +32,19 @@ const FoodDetails = () => {
     window.scrollTo(0, 0);
   }, [product]);
 
-  const addItem =() => {
-    dispatch(cartActions.addItem({
-      id,
-      title,
-      price,
-      image01
-    }))
+  const addItem = () => {
+    dispatch(
+      cartActions.addItem({
+        id,
+        title,
+        price,
+        image01,
+      })
+    );
+  };
+
+  const submitHandler = e => {
+    
   }
   return (
     <Helmet title={`Product-details-${title}`}>
@@ -48,25 +58,25 @@ const FoodDetails = () => {
                   className="img__item mb-3"
                   onClick={() => setPerViewImg(image01)}
                 >
-                  <img src={image01} alt="" className="w-50" />
+                  <img src={image01} alt={title} className="w-50" />
                 </div>
                 <div
                   className="img__item  mb-3"
                   onClick={() => setPerViewImg(image02)}
                 >
-                  <img src={image02} alt="" className="w-50" />
+                  <img src={image02} alt={title} className="w-50" />
                 </div>
                 <div
                   className="img__item mb-3"
                   onClick={() => setPerViewImg(image03)}
                 >
-                  <img src={image03} alt="" className="w-50" />
+                  <img src={image03} alt={title} className="w-50" />
                 </div>
               </div>
             </Col>
             <Col lg="4" md="4">
               <div className="product__main-img">
-                <img src={perViewImg} alt="" className="w-100" />
+                <img src={perViewImg} alt={title} className="w-100" />
               </div>
             </Col>
             <Col lg="6" md="6">
@@ -79,7 +89,9 @@ const FoodDetails = () => {
                   Category : <span>{category}</span>{" "}
                 </p>
 
-                <button onClick={addItem} className="addToCart__btn">Add to Cart</button>
+                <button onClick={addItem} className="addToCart__btn">
+                  Add to Cart
+                </button>
               </div>
             </Col>
 
@@ -127,17 +139,34 @@ const FoodDetails = () => {
                     </p>
                     <p className="feedback__text">great product</p>
                   </div>
-                  <form className="form">
+                  <form className="form" onSubmit={submitHandler}>
                     <div className="form__group">
-                      <input type="text" placeholder="Please Enter Name" />
+                      <input
+                        type="text"
+                        placeholder="Please Enter Name"
+                        value={enteredName}
+                        required
+                        onChange={(e) => setEnteredName(e.target.value)}
+                      />
                     </div>
 
                     <div className="form__group">
-                      <input type="text" placeholder="Please Enter Name" />
+                      <input
+                        type="text"
+                        placeholder="Please Enter Email"
+                        value={enteredEmail}
+                        required
+                        onChange={(e) => setEnteredEmail(e.target.value)}
+                      />
                     </div>
 
                     <div className="form__group">
-                      <textarea rows={5}></textarea>
+                      <textarea
+                        rows={5}
+                        onChange={(e) => setEnteredMsg(e.target.value)}
+                        required
+                        placeholder="Please Enter Message"
+                      ></textarea>
                     </div>
 
                     <button type="submit" className="addToCart__btn">
