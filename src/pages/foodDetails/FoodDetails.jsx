@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { Container, Row, Col } from "reactstrap";
 
 import products from "../../assets/fake-data/products";
 import Helmet from "../../components/helmet/Helmet";
 import { CommonSection, ProductCard } from "../../components/UI";
+import { cartActions } from "../../store/shopping-cart/CartSlice";
 
-import { Container, Row, Col } from "reactstrap";
 import "./food-details.css";
 
 const FoodDetails = () => {
+  const dispatch = useDispatch();
   const [tab, setTab] = useState("desc");
   const { id } = useParams();
   const product = products.find((product) => product.id === id);
@@ -25,6 +28,14 @@ const FoodDetails = () => {
     window.scrollTo(0, 0);
   }, [product]);
 
+  const addItem =() => {
+    dispatch(cartActions.addItem({
+      id,
+      title,
+      price,
+      image01
+    }))
+  }
   return (
     <Helmet title={`Product-details-${title}`}>
       <CommonSection title={title} />
@@ -68,7 +79,7 @@ const FoodDetails = () => {
                   Category : <span>{category}</span>{" "}
                 </p>
 
-                <button className="addToCart__btn">Add to Cart</button>
+                <button onClick={addItem} className="addToCart__btn">Add to Cart</button>
               </div>
             </Col>
 
