@@ -13,9 +13,9 @@ const FoodDetails = () => {
   const [tab, setTab] = useState("desc");
   const { id } = useParams();
   const product = products.find((product) => product.id === id);
-
   const [perViewImg, setPerViewImg] = useState(product.image01);
 
+  const {title ,image01 , image02 ,image03 ,price ,category ,desc} = product
   return (
     <Helmet title={`Product-details`}>
       <CommonSection title={"product 01"} />
@@ -25,14 +25,14 @@ const FoodDetails = () => {
           <Row>
             <Col lg="2" md="2">
               <div className="product__images">
-                <div className="img__item" onClick={() => setPerViewImg(product.image01)}>
-                  <img src={product.image01} alt="" className="w-50" />
+                <div className="img__item mb-3" onClick={() => setPerViewImg(image01)}>
+                  <img src={image01} alt="" className="w-50" />
                 </div>
-                <div className="img__item" onClick={() => setPerViewImg(product.image02)}>
-                  <img src={product.image02} alt="" className="w-50" />
+                <div className="img__item  mb-3" onClick={() => setPerViewImg(image02)}>
+                  <img src={image02} alt="" className="w-50" />
                 </div>
-                <div className="img__item" onClick={() => setPerViewImg(product.image03)}>
-                  <img src={product.image03} alt="" className="w-50" />
+                <div className="img__item mb-3" onClick={() => setPerViewImg(image03)}>
+                  <img src={image03} alt="" className="w-50" />
                 </div>
               </div>
             </Col>
@@ -43,12 +43,12 @@ const FoodDetails = () => {
             </Col>
             <Col lg="6" md="6">
               <div className="single__product-content">
-                <h2 className="product__title mb-3">Pizza with mushroom</h2>
+                <h2 className="product__title mb-3">{title}</h2>
                 <p className="product__price">
-                  Price: <span>$ 345</span>{" "}
+                  Price: <span>$ {price}</span>{" "}
                 </p>
                 <p className="category mb-5">
-                  Category : <span>Burger</span>{" "}
+                  Category : <span>{category}</span>{" "}
                 </p>
 
                 <button className="addToCart__btn">Add to Cart</button>
@@ -63,10 +63,7 @@ const FoodDetails = () => {
 
               <div className="tab__content">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Nesciunt velit unde in quidem sunt quis tenetur aperiam
-                  laborum magnam ex omnis at sint doloribus consequatur
-                  laudantium ducimus cupiditate, debitis nemo.
+                  {desc}
                 </p>
               </div>
 
