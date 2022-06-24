@@ -17,11 +17,14 @@ const FoodDetails = () => {
   const { title, image01, image02, image03, price, category, desc } = product;
   const relatedProduct = products.filter((item) => item.category === category);
 
+  useEffect(() => {
+    setPerViewImg(image01);
+  }, [image01]);
 
   useEffect(() => {
-    setPerViewImg(image01)
-  }, [image01])
-  
+    window.scrollTo(0, 0);
+  }, [product]);
+
   return (
     <Helmet title={`Product-details-${title}`}>
       <CommonSection title={title} />
@@ -135,15 +138,13 @@ const FoodDetails = () => {
             </Col>
 
             <Col lg="12" className="mb-5 mt-4">
-              <h5>You might also like</h5>
+              <h2 className="related__Product-title">You might also like</h2>
             </Col>
-            {
-              relatedProduct.map(item => (
-                <Col className="mb-4" lg="3" md="4" sm="6" xs="12" key={item.id}>
-                  <ProductCard item={item} />
-                </Col>
-              ))
-            }
+            {relatedProduct.map((item) => (
+              <Col className="mb-4" lg="3" md="4" sm="6" xs="12" key={item.id}>
+                <ProductCard item={item} />
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
