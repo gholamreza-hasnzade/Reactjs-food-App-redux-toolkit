@@ -41,5 +41,20 @@
 }
 
 .paginationButtons a:hover {
-    background: #df2020;
+  background: #df2020;
+}
+
+@media only screen and (max-width: 768px) {
+  .search__widget  {
+    width: 100% ;
+    margin-bottom: 20px;
+  }
+  .search__widget input {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  .sorting__widget select {
+    width: 100% !important;
+    font-size: 0.8rem;
+  }
 }
