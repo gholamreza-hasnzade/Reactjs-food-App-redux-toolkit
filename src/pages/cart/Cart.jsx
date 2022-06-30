@@ -39,9 +39,10 @@ const Cart = () => {
                   </tbody>
                 </table>
               )}
-              <div>
+              <div className="mt-4">
                 <h6>
-                  Subtotal: <span>$ {totalAmount}</span>
+                  Subtotal: $
+                  <span className="cart__subtotal"> {totalAmount}</span>
                 </h6>
                 <p>Taxes and Shipping will calculate at checkout</p>
                 <div className="cart__page-btn">

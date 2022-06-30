@@ -17,3 +17,8 @@ th {
 .cart__page-btn button a:hover {
   color: #fff;
 }
+
+.cart__subtotal  {
+  color: #df2020;
+  font-size: 1rem;
+}
