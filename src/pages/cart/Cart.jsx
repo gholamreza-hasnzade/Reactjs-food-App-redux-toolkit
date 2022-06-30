@@ -1,15 +1,17 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
+import { Link } from "react-router-dom";
 
 import { cartActions } from "../../store/shopping-cart/CartSlice";
-
 import { CommonSection } from "../../components/UI";
 import Helmet from "../../components/helmet/Helmet";
 
 import "./cart.css";
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
+
   return (
     <Helmet title={"cart"}>
       <CommonSection title={"Your cart"} />
@@ -32,11 +34,26 @@ const Cart = () => {
                   </thead>
                   <tbody>
                     {cartItems.map((item, index) => (
-                      <Tr item={item} key={index} />
+                      <RenderItem item={item} key={index} />
                     ))}
                   </tbody>
                 </table>
               )}
+              <div>
+                <h6>
+                  Subtotal: <span>$ {totalAmount}</span>
+                </h6>
+                <p>Taxes and Shipping will calculate at checkout</p>
+                <div className="cart__page-btn">
+                  <button className="addToCart__btn me-4">
+                    <Link to={"/foods"}>Continue Shopping</Link>
+                  </button>
+
+                  <button className="addToCart__btn">
+                    <Link to={"/checkout"}>Proceed to Checkout</Link>
+                  </button>
+                </div>
+              </div>
             </Col>
           </Row>
         </Container>
@@ -45,7 +62,7 @@ const Cart = () => {
   );
 };
 
-const Tr = ({ item }) => {
+const RenderItem = ({ item }) => {
   const { id, title, price, image01, quantity } = item;
   const dispatch = useDispatch();
 

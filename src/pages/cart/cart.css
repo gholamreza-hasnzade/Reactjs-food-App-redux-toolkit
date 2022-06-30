@@ -13,3 +13,7 @@ th {
   cursor: pointer;
   color: #df2020;
 }
+
+.cart__page-btn button a:hover {
+  color: #fff;
+}
