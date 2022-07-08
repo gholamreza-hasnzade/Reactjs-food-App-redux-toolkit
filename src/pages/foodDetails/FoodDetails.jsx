@@ -44,7 +44,7 @@ const FoodDetails = () => {
   };
 
   const submitHandler = e => {
-    
+    e.preventDefault();
   }
   return (
     <Helmet title={`Product-details-${title}`}>

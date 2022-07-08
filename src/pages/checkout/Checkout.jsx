@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "reactstrap";
 import { useSelector } from "react-redux";
 
@@ -12,6 +12,27 @@ const Checkout = () => {
   const shippingCost = 30;
   const totalAmount = cartTotalAmount + Number(shippingCost);
 
+  const [enterName, setEnterName] = useState("");
+  const [enterEmail, setEnterEmail] = useState("");
+  const [enterNumber, setEnterNumber] = useState("");
+  const [enterCountry, setEnterCountry] = useState("");
+  const [enterCity, setEnterCity] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+
+  const shippingInfo = [];
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const userShippingAddress = {
+      name: enterName,
+      email: enterEmail,
+      phone: enterNumber,
+      country: enterCountry,
+      city: enterCity,
+      postalCode: postalCode,
+    };
+    shippingInfo.push(userShippingAddress);
+    console.log(shippingInfo);
+  };
   return (
     <Helmet title={"Checkout"}>
       <CommonSection title={"Checkout"} />
@@ -20,29 +41,59 @@ const Checkout = () => {
           <Row>
             <Col lg="8" md="6">
               <h6 className="mb-4">Shipping Address</h6>
-              <form className="checkout__form">
+              <form className="checkout__form" onSubmit={submitHandler}>
                 <div className="form__group">
-                  <input type="text" placeholder="Enter your name" />
+                  <input
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                    onChange={(e) => setEnterName(e.target.name)}
+                  />
                 </div>
 
                 <div className="form__group">
-                  <input type="email" placeholder="Enter your email" />
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required
+                    onChange={(e) => setEnterEmail(e.target.name)}
+                  />
                 </div>
 
                 <div className="form__group">
-                  <input type="number" placeholder="Phone number" />
+                  <input
+                    type="number"
+                    placeholder="Phone number"
+                    required
+                    onChange={(e) => setEnterNumber(e.target.name)}
+                  />
                 </div>
 
                 <div className="form__group">
-                  <input type="text" placeholder="Enter your Country" />
+                  <input
+                    type="text"
+                    placeholder="Enter your Country"
+                    required
+                    onChange={(e) => setEnterCountry(e.target.name)}
+                  />
                 </div>
 
                 <div className="form__group">
-                  <input type="text" placeholder="Enter your city" />
+                  <input
+                    type="text"
+                    placeholder="Enter your city"
+                    required
+                    onChange={(e) => setEnterCity(e.target.name)}
+                  />
                 </div>
 
                 <div className="form__group">
-                  <input type="number" placeholder="Postal code" />
+                  <input
+                    type="number"
+                    placeholder="Postal code"
+                    required
+                    onChange={(e) => setPostalCode(e.target.name)}
+                  />
                 </div>
 
                 <button className="addToCart__btn">Payment</button>
