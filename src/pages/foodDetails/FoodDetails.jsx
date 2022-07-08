@@ -43,9 +43,10 @@ const FoodDetails = () => {
     );
   };
 
-  const submitHandler = e => {
+  const submitHandler = (e) => {
     e.preventDefault();
-  }
+    console.log(enteredName, enteredEmail, enteredMsg);
+  };
   return (
     <Helmet title={`Product-details-${title}`}>
       <CommonSection title={title} />
