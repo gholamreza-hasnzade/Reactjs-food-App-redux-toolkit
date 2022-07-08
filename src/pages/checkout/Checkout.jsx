@@ -5,13 +5,11 @@ import { useSelector } from "react-redux";
 import Helmet from "../../components/helmet/Helmet";
 import { CommonSection } from "../../components/UI";
 
-
-import "./checkout.css"
+import "./checkout.css";
 
 const Checkout = () => {
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
   const shippingCost = 30;
-
   const totalAmount = cartTotalAmount + Number(shippingCost);
 
   return (
@@ -52,17 +50,17 @@ const Checkout = () => {
             </Col>
             <Col lg="4" md="6">
               <div className="checkout__bill">
-                <h6>
+                <h6 className="d-flex align-items-center justify-content-between mb-3">
                   Subtotal: <span>$ {cartTotalAmount}</span>
                 </h6>
-                <h6>
+                <h6 className="d-flex align-items-center justify-content-between mb-3">
                   Shipping: <span>$ {shippingCost}</span>
                 </h6>
-              </div>
-              <div>
-                <h5>
-                  Total: <span>$ {totalAmount}</span>
-                </h5>
+                <div className="checkout__total">
+                  <h5 className="d-flex align-items-center justify-content-between">
+                    Total: <span>$ {totalAmount}</span>
+                  </h5>
+                </div>
               </div>
             </Col>
           </Row>
