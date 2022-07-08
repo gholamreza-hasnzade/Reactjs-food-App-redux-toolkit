@@ -5,7 +5,15 @@ import { useSelector } from "react-redux";
 import Helmet from "../../components/helmet/Helmet";
 import { CommonSection } from "../../components/UI";
 
+
+import "./checkout.css"
+
 const Checkout = () => {
+  const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
+  const shippingCost = 30;
+
+  const totalAmount = cartTotalAmount + Number(shippingCost);
+
   return (
     <Helmet title={"Checkout"}>
       <CommonSection title={"Checkout"} />
@@ -39,9 +47,23 @@ const Checkout = () => {
                   <input type="number" placeholder="Postal code" />
                 </div>
 
-
                 <button className="addToCart__btn">Payment</button>
               </form>
+            </Col>
+            <Col lg="4" md="6">
+              <div className="checkout__bill">
+                <h6>
+                  Subtotal: <span>$ {cartTotalAmount}</span>
+                </h6>
+                <h6>
+                  Shipping: <span>$ {shippingCost}</span>
+                </h6>
+              </div>
+              <div>
+                <h5>
+                  Total: <span>$ {totalAmount}</span>
+                </h5>
+              </div>
             </Col>
           </Row>
         </Container>
