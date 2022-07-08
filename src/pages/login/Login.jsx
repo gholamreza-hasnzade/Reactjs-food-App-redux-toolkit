@@ -35,7 +35,7 @@ const Login = () => {
                 </button>
               </form>
               <Link to="/register">
-                Already have an account? Create an account
+                Don't have an account? Create an account
               </Link>
             </Col>
           </Row>
